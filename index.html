@@ -348,7 +348,7 @@
           <div class="col-md-6">
             <form target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="POST" role="form" class="form">
               <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://ridabook.netlify.app/contact-response.html">
+              <input type="hidden" name="_next" value="https://ridabook.netlify.app/order-response.html">
 
               <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Full Name" required>
@@ -357,19 +357,19 @@
                 <input type="email" name="email" class="form-control" placeholder="Email Address" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" name="name" class="form-control" placeholder="Phone number" required>
+                <input type="text" name="phone" class="form-control" placeholder="Phone number" required>
               </div>
               <div class="form-group mt-3">
                 <input type="text" name="class" class="form-control" placeholder="Class" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" name="book_give" class="form-control" placeholder="Title of book requested " required>
+                <input type="text" name="book_requested" class="form-control" placeholder="Title of book requested" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" name="book_rq" class="form-control" placeholder="Title & author of given book" required>
+                <input type="text" name="book_given" class="form-control" placeholder="Title & author of given book" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" placeholder="Genre" class="form-control" name="message" required>
+                <input type="text" name="genre" class="form-control" placeholder="Genre" required>
               </div>
               <div class="text-center mt-3">
                 <button type="submit">Submit Form</button>
@@ -629,7 +629,7 @@
 
       <div class="row gx-lg-0 gy-4">
         <div class="col-lg-4">
-          <div class="info-container d-flex flex-column align-items-center justify-content-center">
+          <div class="info-container d-flex flex-column align-items-center justify-content-start">
             <div class="info-item d-flex">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
@@ -645,24 +645,13 @@
                 <p>ridabook.ohs@gmail.com</p>
               </div>
             </div><!-- End Info Item -->
-
-            <div class="info-item d-flex">
-              <i class="bi bi-phone flex-shrink-0"></i>
-              <div>
-                <h4>Call:</h4>
-                <p>+40 (721) 487 015 - Ema-Alexia Caragea</p>
-                <p>+40 (735) 119 347 - Amalia Covaleov</p>
-                <p>+40 (743) 520 922 - Maria-Eliza Cristea</p>
-              </div>
-            </div><!-- End Info Item -->
-
           </div>
         </div>
 
         <div class="col-lg-8">
           <form target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="post" role="form" class="form">
             <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://ridabook.netlify.app/order-response.html">
+            <input type="hidden" name="_next" value="https://ridabook.netlify.app/contact-response.html">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
