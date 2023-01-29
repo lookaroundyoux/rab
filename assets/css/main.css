@@ -70,7 +70,7 @@ h6 {
     padding-right: 15px;
     padding-left: 15px;
     width: 100%;
-    
+
 }
 
 .row-breadcrumbs > li {
@@ -96,7 +96,7 @@ h6 {
   content:"You're in";
   padding-right: 5px;
   white-space: nowrap;
- 
+
   font-size: 1.2rem;
   display: inline;
   padding: 0 15px;
@@ -2649,7 +2649,7 @@ section {
   border-color: rgba(0, 131, 116, 0.8);
 }
 
-.blog .comments .reply-form .form-group {
+.form-group {
   margin-bottom: 25px;
 }
 
