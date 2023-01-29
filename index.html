@@ -338,44 +338,44 @@
   </section><!-- End Book Stock Section -->
 
   <!-- ======= Exchange Section ======= -->
-  <section id="order" class="order sections-bg">
+  <section id="order" class="order">
     <div class="container" data-aos="fade-up">
       <div class="row gx-lg-0 gy-4">
         <div class="info-container d-flex flex-column align-items-center justify-content-center">
           <div class="text">
             <h1>Exchange your book here</h1>
           </div>
-          <form target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://rabtest5.netlify.app/1.html">
+          <div class="col-md-6">
+            <form target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="POST" role="form" class="form">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://ridabook.netlify.app/contact-response.html">
 
-            <div class="form-group">
-              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-            </div>
-
-            <div class="form-group">
-              <input type="text" name="name" class="form-control" placeholder="Phone number" required>
-            </div>
-            <div class="form-group">
-              <input type="text" name="class" class="form-control" placeholder="Class" required>
-            </div>
-
-            <div class="form-group">
-              <input type="text" name="book_give" class="form-control" placeholder="Title of book requested " required>
-            </div>
-            <div class="form-group">
-              <input type="text" name="book_rq" class="form-control" placeholder="Title & author of given book" required>
-            </div>
-
-            <div class="form-group">
-              <input type="text" placeholder="Genre" class="form-control" name="message" required>
-            </div>
-
-            <button type="submit" class="btn btn-lg btn-dark btn-block"> Submit Form</button>
-          </form>
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" name="name" class="form-control" placeholder="Phone number" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" name="class" class="form-control" placeholder="Class" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" name="book_give" class="form-control" placeholder="Title of book requested " required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" name="book_rq" class="form-control" placeholder="Title & author of given book" required>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" placeholder="Genre" class="form-control" name="message" required>
+              </div>
+              <div class="text-center mt-3">
+                <button type="submit">Submit Form</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -384,9 +384,9 @@
   <script type="module">
     $(document).ready(function() {
 
-      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      $('.navbar a, footer a[href=\'#myPage\']').on('click', function(event) {
 
-        if (this.hash !== "") {
+        if (this.hash !== '') {
 
           event.preventDefault();
 
@@ -395,7 +395,7 @@
 
 
           $('html, body').animate({
-            scrollTop: $(hash).offset().top
+            scrollTop: $(hash).offset().top,
           }, 900, function() {
 
 
@@ -405,16 +405,16 @@
       });
 
       $(window).scroll(function() {
-        $(".slideanim").each(function() {
+        $('.slideanim').each(function() {
           var pos = $(this).offset().top;
 
           var winTop = $(window).scrollTop();
           if (pos < winTop + 600) {
-            $(this).addClass("slide");
+            $(this).addClass('slide');
           }
         });
       });
-    })
+    });
 
     $('form').on('submit', function() {
       if ($('form').first().valid()) {
@@ -434,39 +434,39 @@
 
     let pa = makeid(7);
     // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js';
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
     // Your web app's Firebase configuration
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     const firebaseConfig = {
-      apiKey: "AIzaSyBMaHd38yfaqZnq0mib4m7fRRIgaF90g4A",
-      authDomain: "rid-a-book-4e928.firebaseapp.com",
-      databaseURL: "https://rid-a-book-4e928-default-rtdb.firebaseio.com",
-      projectId: "rid-a-book-4e928",
-      storageBucket: "rid-a-book-4e928.appspot.com",
-      messagingSenderId: "963311536760",
-      appId: "1:963311536760:web:96de9c6c8599adaa533b8d",
-      measurementId: "G-VPTR3HYWCB"
+      apiKey: 'AIzaSyBMaHd38yfaqZnq0mib4m7fRRIgaF90g4A',
+      authDomain: 'rid-a-book-4e928.firebaseapp.com',
+      databaseURL: 'https://rid-a-book-4e928-default-rtdb.firebaseio.com',
+      projectId: 'rid-a-book-4e928',
+      storageBucket: 'rid-a-book-4e928.appspot.com',
+      messagingSenderId: '963311536760',
+      appId: '1:963311536760:web:96de9c6c8599adaa533b8d',
+      measurementId: 'G-VPTR3HYWCB',
     };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js";
+    import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js';
 
     const db = getDatabase();
     var username = document.getElementById('1');
     var email1 = document.getElementById('2');
 
     function insertdata() {
-      set(ref(db, "Cod/" + username.value), {
-        CODE: pa, USERNAME: username.value, EMAIL: email1.value
+      set(ref(db, 'Cod/' + username.value), {
+        CODE: pa, USERNAME: username.value, EMAIL: email1.value,
       })
         .then((result) => {
-          alert("Your code is:" + pa + " and your usename is:" + username.value);
+          alert('Your code is:' + pa + ' and your usename is:' + username.value);
 
         }).catch((err) => {
         alert(err);
@@ -476,13 +476,13 @@
     document.getElementById('sa').addEventListener('click', insertdata);
 
     function bt() {
-      document.location.href = "index11.html";
+      document.location.href = 'index11.html';
     }
   </script>
 
 
   <!-- ======= Our Team Section ======= -->
-  <section id="team" class="team">
+  <section id="team" class="team sections-bg">
     <div class="container" data-aos="fade-up">
       <div class="section-header">
         <h2>Our Team</h2>
@@ -532,7 +532,7 @@
   </section><!-- End Our Team Section -->
 
   <!-- ======= Frequently Asked Questions Section ======= -->
-  <section id="faq" class="faq sections-bg">
+  <section id="faq" class="faq">
     <div class="container" data-aos="fade-up">
       <div class="row gy-4">
         <div class="col-lg-4">
@@ -619,7 +619,7 @@
   </section><!-- End Frequently Asked Questions Section -->
 
   <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact sections-bg">
     <div class="container" data-aos="fade-up">
 
       <div class="section-header">
@@ -660,7 +660,9 @@
         </div>
 
         <div class="col-lg-8">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="post" role="form" class="form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://rabtest5.netlify.app/1.html">
             <div class="row">
               <div class="col-md-6 form-group">
                 <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
