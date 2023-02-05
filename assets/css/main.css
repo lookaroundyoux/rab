@@ -159,7 +159,10 @@ h6 {
   flex: 1 1 60%;
 }
 
-
+.bookTitles{
+  font-weight: bold;
+  color: #a8544b;
+}
 
 section {
   padding: 60px 0;
