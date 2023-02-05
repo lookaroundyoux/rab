@@ -345,7 +345,7 @@
           <div class="col-md-6">
             <form id="orderForm" target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="POST" role="form" class="form">
               <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://ridabook.netlify.app/order-response.html">
+              <input type="hidden" name="_next" id="next" value="https://ridabook.netlify.app/order-response.html">
 
               <div class="form-group">
                 <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
@@ -691,17 +691,17 @@
   };
 
   $('#orderForm').submit(function(e) {
-    // e.preventDefault();
     const $form = $(this);
     const name = $('#name').val();
     const email = $('#email').val();
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const db = getDatabase();
+    const db = getDatabase(app);
     const code = makeid(7);
+    $('#next').val(`https://ridabook.netlify.app/order-response.html?code=${code}`);
 
-    set(ref(db, `Cod/${name}`), { code, name, email })
+    set(ref(db, `Cod/${btoa(email)}`), { code, name, email })
       .then((result) => {
         alert(`'Your code is: ${code} and your username is: ${name}`);
       }).catch((err) => {
