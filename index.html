@@ -83,7 +83,7 @@
         </div>
       </div>
       <div class="col-lg-6 order-1 order-lg-2">
-        <img src="assets/img/reading-time.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
+        <img src="assets/img/hero2.svg" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
       </div>
     </div>
   </div>
@@ -343,15 +343,15 @@
             <h1>Exchange your book here</h1>
           </div>
           <div class="col-md-6">
-            <form target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="POST" role="form" class="form">
+            <form id="orderForm" target="_blank" action="https://formsubmit.co/ridabook.ohs@gmail.com" method="POST" role="form" class="form">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_next" value="https://ridabook.netlify.app/order-response.html">
 
               <div class="form-group">
-                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
               </div>
               <div class="form-group mt-3">
-                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" required>
               </div>
               <div class="form-group mt-3">
                 <input type="text" name="phone" class="form-control" placeholder="Phone number" required>
@@ -377,105 +377,6 @@
       </div>
     </div>
   </section>
-
-  <script type="module">
-    $(document).ready(function() {
-
-      $('.navbar a, footer a[href=\'#myPage\']').on('click', function(event) {
-
-        if (this.hash !== '') {
-
-          event.preventDefault();
-
-
-          var hash = this.hash;
-
-
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top,
-          }, 900, function() {
-
-
-            window.location.hash = hash;
-          });
-        }
-      });
-
-      $(window).scroll(function() {
-        $('.slideanim').each(function() {
-          var pos = $(this).offset().top;
-
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass('slide');
-          }
-        });
-      });
-    });
-
-    $('form').on('submit', function() {
-      if ($('form').first().valid()) {
-        stopNavigate();
-      }
-    });
-
-    function makeid(length) {
-      var result = '';
-      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      var charactersLength = characters.length;
-      for (var i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      }
-      return result;
-    }
-
-    let pa = makeid(7);
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
-    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js';
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: 'AIzaSyBMaHd38yfaqZnq0mib4m7fRRIgaF90g4A',
-      authDomain: 'rid-a-book-4e928.firebaseapp.com',
-      databaseURL: 'https://rid-a-book-4e928-default-rtdb.firebaseio.com',
-      projectId: 'rid-a-book-4e928',
-      storageBucket: 'rid-a-book-4e928.appspot.com',
-      messagingSenderId: '963311536760',
-      appId: '1:963311536760:web:96de9c6c8599adaa533b8d',
-      measurementId: 'G-VPTR3HYWCB',
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-database.js';
-
-    const db = getDatabase();
-    var username = document.getElementById('1');
-    var email1 = document.getElementById('2');
-
-    function insertdata() {
-      set(ref(db, 'Cod/' + username.value), {
-        CODE: pa, USERNAME: username.value, EMAIL: email1.value,
-      })
-        .then((result) => {
-          alert('Your code is:' + pa + ' and your usename is:' + username.value);
-
-        }).catch((err) => {
-        alert(err);
-      });
-    }
-
-    document.getElementById('sa').addEventListener('click', insertdata);
-
-    function bt() {
-      document.location.href = 'index11.html';
-    }
-  </script>
 
 
   <!-- ======= Our Team Section ======= -->
@@ -651,14 +552,14 @@
             <input type="hidden" name="_next" value="https://ridabook.netlify.app/contact-response.html">
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
               </div>
             </div>
             <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
             </div>
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="7" placeholder="Message" required></textarea>
@@ -752,6 +653,7 @@
 <div id="preloader"></div>
 
 <!-- Vendor JS Files -->
+<script src="assets/vendor/jquery-3.6.3.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -761,6 +663,52 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
+  import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js';
+
+  function makeid(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: 'AIzaSyBMaHd38yfaqZnq0mib4m7fRRIgaF90g4A',
+    authDomain: 'rid-a-book-4e928.firebaseapp.com',
+    databaseURL: 'https://rid-a-book-4e928-default-rtdb.firebaseio.com',
+    projectId: 'rid-a-book-4e928',
+    storageBucket: 'rid-a-book-4e928.appspot.com',
+    messagingSenderId: '963311536760',
+    appId: '1:963311536760:web:96de9c6c8599adaa533b8d',
+  };
+
+  $('#orderForm').submit(function(e) {
+    // e.preventDefault();
+    const $form = $(this);
+    const name = $('#name').val();
+    const email = $('#email').val();
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+    const code = makeid(7);
+
+    set(ref(db, `Cod/${name}`), { code, name, email })
+      .then((result) => {
+        alert(`'Your code is: ${code} and your username is: ${name}`);
+      }).catch((err) => {
+      alert(err);
+    });
+  });
+</script>
 
 </body>
 
