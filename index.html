@@ -590,9 +590,11 @@
 <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
-  import { getDatabase, ref, set } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js';
+  import {
+    getFirestore, collection, addDoc, getDocs,
+  } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
-  function makeid(length) {
+  function makeId(length) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -613,23 +615,25 @@
     appId: '1:963311536760:web:96de9c6c8599adaa533b8d',
   };
 
-  $('#orderForm').submit(function(e) {
+  $('#orderForm').submit(async function(e) {
     const $form = $(this);
     const name = $('#name').val();
     const email = $('#email').val();
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-    const code = makeid(7);
+    const db = getFirestore(app);
+    const code = makeId(7);
     $('#next').val(`https://ridabook.netlify.app/order-response.html?code=${code}`);
 
-    set(ref(db, `Cod/${btoa(email)}`), { code, name, email })
-      .then((result) => {
-        alert(`'Your code is: ${code} and your username is: ${name}`);
-      }).catch((err) => {
-      alert(err);
-    });
+    try {
+      const existingUser = await getDocs(collection(db, 'users'), { email });
+      const docRef = await addDoc(collection(db, 'users', btoa(email)), { code, name, email });
+      console.log('Document written with ID: ', docRef.id);
+    } catch (e) {
+      console.error('Error adding document: ', e);
+      alert(e.message);
+    }
   });
 </script>
 
