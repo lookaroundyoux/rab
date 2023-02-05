@@ -162,11 +162,30 @@ h6 {
   flex: 1 1 60%;
 }
 
-.bookTitles{
+.bookTitles {
   font-weight: bold;
   color: #a8544b;
 }
 
+.bookAuthor {
+  font-weight: lighter;
+  color:#fbb1ad;
+}
+
+.specs{
+  font-weight: lighter;
+  color:#fbb1ad;
+}
+
+.specsAnswer{
+  font-weight: lighter;
+  color:#cc7161;
+}
+
+.synopsis {
+  margin-top: 4rem;
+  color: #cc7161;
+}
 
 section {
   padding: 60px 0;
@@ -1988,6 +2007,7 @@ section {
   padding: 10px 12px;
 }
 
+
 .form button[type=submit] {
   background: #a8544b;
   border: 0;
@@ -1998,6 +2018,19 @@ section {
 }
 
 .form button[type=submit]:hover {
+  background: #cc7161;
+}
+
+.mybutton{
+  background: #a8544b;
+  border: 0;
+  padding: 14px 45px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.mybutton:hover {
   background: #cc7161;
 }
 
