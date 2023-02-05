@@ -152,9 +152,9 @@
         <div class="col-lg-6">
           <div class="content ps-0 ps-lg-5">
             <h3> HOW DOES RID A BOOK WORK?</h3>
-            
+
             <p> You can take a look at our available books and decide which one you would like to be your next read. You then must complete the form in our ‘Order’ section. The book you are offering in exchange must meet the criteria listed here. After your request is accepted, you will be contacted by one of our team members and decide on a time you can meet during school hours to complete the book exchange. </p>
-            
+
 
             <div class="position-relative mt-4">
               <img src="assets/img/ab.us2.JPG" class="img-fluid rounded-4" alt="">
@@ -167,7 +167,7 @@
   </section>
   <!-- End About Us Section -->
 
-  
+
 
   <!-- ======= Our Services Section ======= -->
   <section id="services" class="services sections-bg">
@@ -591,7 +591,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
   import {
-    getFirestore, collection, addDoc, getDocs,
+    getFirestore, collection, setDoc, doc,
   } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
   function makeId(length) {
@@ -627,9 +627,8 @@
     $('#next').val(`https://ridabook.netlify.app/order-response.html?code=${code}`);
 
     try {
-      const existingUser = await getDocs(collection(db, 'users'), { email });
-      const docRef = await addDoc(collection(db, 'users', btoa(email)), { code, name, email });
-      console.log('Document written with ID: ', docRef.id);
+      const usersRef = collection(db, 'users');
+      await setDoc(doc(usersRef, email), { code, name, email, createdAt: new Date() });
     } catch (e) {
       console.error('Error adding document: ', e);
       alert(e.message);
