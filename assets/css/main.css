@@ -68,7 +68,6 @@ h6 {
   position: relative;
   min-height: 1px;
   padding-right: 15px;
-  padding-left: 15px;
   width: 100%;
 
 }
@@ -84,7 +83,13 @@ h6 {
   text-transform: uppercase
 }
 
-.row-breadcrumbs {
+.row-breadcrumbs{
+  margin-bottom: 0;
+  padding: 0;
+  
+}
+.breadcrumb-border {
+  margin-bottom: 4rem;
   border-bottom: 1px solid #a8544b;
 }
 
@@ -95,9 +100,7 @@ h6 {
 
 .row-breadcrumbs::before {
   content: "You're in";
-  padding-right: 5px;
   white-space: nowrap;
-
   font-size: 1.2rem;
   display: inline;
   padding: 0 15px;
@@ -112,15 +115,50 @@ h6 {
   color: #a8544b;
 }
 
+.image-divslider{
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
 
 .stock-photo {
-  padding: 20px;
-  padding-left: 30px;
-  padding-bottom: 30px;
-  padding-right: 30px;
-  padding-top: 30px;
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-in;
+}
+
+
+
+.flexChild {
+  flex: 1;
+}
+
+.unu {
+  display: inline-flex;
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.cover {
+  width: 65%;
+  max-width: 350px;
 
 }
+
+.doi {
+  flex: 1 1 60%;
+}
+
 
 
 section {
