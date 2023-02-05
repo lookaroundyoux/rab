@@ -83,19 +83,23 @@ h6 {
   text-transform: uppercase
 }
 
-.row-breadcrumbs{
+.row-breadcrumbs {
   margin-bottom: 0;
   padding: 0;
-  
+
 }
+
 .breadcrumb-border {
   margin-bottom: 4rem;
   border-bottom: 1px solid #a8544b;
 }
 
-.row-breadcrumbs > li + li:not(:last-of-type):after {
+.row-breadcrumbs > li:after {
   content: "/";
+}
 
+.row-breadcrumbs > li:last-of-type:after {
+  content: "";
 }
 
 .row-breadcrumbs::before {
@@ -115,7 +119,7 @@ h6 {
   color: #a8544b;
 }
 
-.image-divslider{
+.image-divslider {
   height: 400px;
   position: relative;
   overflow: hidden;
@@ -135,7 +139,6 @@ h6 {
   align-items: center;
   cursor: zoom-in;
 }
-
 
 
 .flexChild {
@@ -163,6 +166,7 @@ h6 {
   font-weight: bold;
   color: #a8544b;
 }
+
 
 section {
   padding: 60px 0;
