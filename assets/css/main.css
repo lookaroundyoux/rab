@@ -745,11 +745,12 @@ section {
 /*--------------------------------------------------------------
 # About Us Section
 --------------------------------------------------------------*/
-.about h3 {
+.about h4 {
   font-weight: 700;
   font-size: 28px;
   margin-bottom: 20px;
   font-family: var(--font-secondary);
+  color: var(--color-primary);
 }
 
 .about .call-us {
