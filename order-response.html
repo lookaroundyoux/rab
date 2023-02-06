@@ -28,6 +28,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
+    <link href="assets/css/order-response.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -76,10 +77,10 @@
     </header>
     <main id="main">
       <section id="thanks" class="thanks">
-        <p>
-          Thank you for your order. You can head to our mobile app now and register with the following code:
-          <span id="code"></span>
-        </p>
+        <div class="container-fluid container-xl d-flex flex-column justify-content-center align-items-center">
+          <div>Thank you for your order. You can head to our mobile app now and register with the following code:</div>
+          <div id="code"></div>
+        </div>
       </section>
     </main>
     <footer id="footer" class="footer">
@@ -130,5 +131,12 @@
         </div>
       </div>
     </footer>
+    <script src="assets/vendor/jquery-3.6.3.min.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+
+      $('#code').text(code);
+    </script>
   </body>
 </html>
