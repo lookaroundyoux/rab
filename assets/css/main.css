@@ -2033,6 +2033,7 @@ section {
 
 .mybutton:hover {
     background: #cc7161;
+    color: #fff;
 }
 
 @-webkit-keyframes animate-loading {
