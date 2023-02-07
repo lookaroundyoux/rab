@@ -805,6 +805,7 @@
         getFirestore,
         collection,
         setDoc,
+        addDoc,
         doc,
       } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
@@ -842,7 +843,10 @@
 
         try {
           const usersRef = collection(db, 'users');
-          await setDoc(doc(usersRef, email), { code, name, email, createdAt: new Date() });
+          // the following creates a new user if the email doesn't exist and updates it if it does
+          // await setDoc(doc(usersRef, email), { code, name, email, createdAt: new Date() });
+          // the following always creates a new user, even if the same email address exists
+          await addDoc(usersRef, { code, name, email, createdAt: new Date() });
         } catch (e) {
           console.error('Error adding document: ', e);
           alert(e.message);
