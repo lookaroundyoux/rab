@@ -1147,6 +1147,10 @@ section {
     transition: 0.3s;
 }
 
+.services ul.list {
+    text-align: center;
+}
+
 .services .service-item p {
     line-height: 24px;
     font-size: 14px;
